@@ -1,4 +1,4 @@
-package ru.webarmour.cryptograph.crypto2.domain
+package ru.webarmour.cryptograph.crypto.domain
 
 data class CoinModel(
     val id: String,

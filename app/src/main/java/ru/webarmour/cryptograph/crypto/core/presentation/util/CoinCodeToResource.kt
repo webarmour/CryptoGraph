@@ -1,4 +1,4 @@
-package ru.webarmour.cryptograph.util
+package ru.webarmour.cryptograph.crypto.core.presentation.util
 
 
 import ru.webarmour.cryptograph.R

@@ -1,7 +1,7 @@
-package ru.webarmour.cryptograph.crypto2.presentation.coin_list
+package ru.webarmour.cryptograph.crypto.presentation.coin_list
 
 import androidx.compose.runtime.Immutable
-import ru.webarmour.cryptograph.crypto2.presentation.models.CoinUIModel
+import ru.webarmour.cryptograph.crypto.presentation.models.CoinUIModel
 
 
 @Immutable

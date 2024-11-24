@@ -1,4 +1,4 @@
-package com.plcoding.cryptotracker.crypto.presentation.models.coin_list.components
+package ru.webarmour.cryptograph.crypto.presentation.coin_list.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -23,9 +23,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import ru.webarmour.cryptograph.crypto2.domain.CoinModel
-import ru.webarmour.cryptograph.crypto2.presentation.models.CoinUIModel
-import ru.webarmour.cryptograph.crypto2.presentation.models.toCoinUi
+import ru.webarmour.cryptograph.crypto.domain.CoinModel
+import ru.webarmour.cryptograph.crypto.presentation.models.CoinUIModel
+import ru.webarmour.cryptograph.crypto.presentation.models.toCoinUi
 import ru.webarmour.cryptograph.theme.CryptoTrackerTheme
 
 @Composable
@@ -34,7 +34,7 @@ fun CoinListItem(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    val contentColor = if(isSystemInDarkTheme()) {
+    val contentColor = if (isSystemInDarkTheme()) {
         Color.White
     } else {
         Color.Black
@@ -88,7 +88,8 @@ fun CoinListItem(
 @Composable
 fun CoinListItemPreview(modifier: Modifier = Modifier) {
     CryptoTrackerTheme {
-        CoinListItem(coinUIModel = previewCoin,
+        CoinListItem(
+            coinUIModel = previewCoin,
             onClick = { /*TODO*/ },
             modifier = Modifier.background(MaterialTheme.colorScheme.background)
         )
