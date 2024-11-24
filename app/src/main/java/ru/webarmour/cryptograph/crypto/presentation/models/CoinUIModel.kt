@@ -1,8 +1,8 @@
-package ru.webarmour.cryptograph.crypto2.presentation.models
+package ru.webarmour.cryptograph.crypto.presentation.models
 
 import androidx.annotation.DrawableRes
-import ru.webarmour.cryptograph.crypto2.domain.CoinModel
-import ru.webarmour.cryptograph.util.getDrawableIdForCoin
+import ru.webarmour.cryptograph.crypto.domain.CoinModel
+import ru.webarmour.cryptograph.crypto.core.presentation.util.getDrawableIdForCoin
 import java.text.NumberFormat
 import java.util.Locale
 

@@ -1,4 +1,4 @@
-package ru.webarmour.cryptograph.crypto2.presentation.coin_list
+package ru.webarmour.cryptograph.crypto.presentation.coin_list
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -15,8 +15,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
-import com.plcoding.cryptotracker.crypto.presentation.models.coin_list.components.CoinListItem
-import com.plcoding.cryptotracker.crypto.presentation.models.coin_list.components.previewCoin
+import ru.webarmour.cryptograph.crypto.presentation.coin_list.components.CoinListItem
+import ru.webarmour.cryptograph.crypto.presentation.coin_list.components.previewCoin
 import ru.webarmour.cryptograph.theme.CryptoTrackerTheme
 
 

@@ -1,4 +1,4 @@
-package com.plcoding.cryptotracker.crypto.presentation.models.coin_list.components
+package ru.webarmour.cryptograph.crypto.presentation.coin_list.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
@@ -20,7 +20,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import ru.webarmour.cryptograph.crypto2.presentation.models.DisplayableNumber
+import ru.webarmour.cryptograph.crypto.presentation.models.DisplayableNumber
 import ru.webarmour.cryptograph.theme.CryptoTrackerTheme
 import ru.webarmour.cryptograph.theme.greenBackground
 
