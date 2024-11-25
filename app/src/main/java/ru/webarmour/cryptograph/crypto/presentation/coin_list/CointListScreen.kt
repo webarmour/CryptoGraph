@@ -36,7 +36,7 @@ fun CoinListScreen(
     } else {
         LazyColumn(
             modifier = modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.spacedBy(8.dp)
+            verticalArrangement = Arrangement.spacedBy(5.dp)
         ) {
             items(state.coins) {
                 CoinListItem(
