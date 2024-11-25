@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.sp
 import ru.webarmour.cryptograph.crypto.domain.CoinModel
 import ru.webarmour.cryptograph.crypto.presentation.models.CoinUIModel
 import ru.webarmour.cryptograph.crypto.presentation.models.toCoinUi
-import ru.webarmour.cryptograph.theme.CryptoTrackerTheme
+import ru.webarmour.cryptograph.theme.CryptoGraphTheme
 
 @Composable
 fun CoinListItem(
@@ -87,7 +87,7 @@ fun CoinListItem(
 @PreviewLightDark
 @Composable
 fun CoinListItemPreview(modifier: Modifier = Modifier) {
-    CryptoTrackerTheme {
+    CryptoGraphTheme {
         CoinListItem(
             coinUIModel = previewCoin,
             onClick = { /*TODO*/ },

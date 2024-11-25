@@ -21,7 +21,7 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ru.webarmour.cryptograph.crypto.presentation.models.DisplayableNumber
-import ru.webarmour.cryptograph.theme.CryptoTrackerTheme
+import ru.webarmour.cryptograph.theme.CryptoGraphTheme
 import ru.webarmour.cryptograph.theme.greenBackground
 
 @Composable
@@ -68,7 +68,7 @@ fun PriceChange(
 @PreviewLightDark
 @Composable
 private fun PriceChangePreview() {
-    CryptoTrackerTheme {
+    CryptoGraphTheme {
         PriceChange(
             change = DisplayableNumber(
                 value = 2.43,
