@@ -1,6 +1,6 @@
 package ru.webarmour.cryptograph.crypto.presentation.coin_detail
 
-import android.graphics.Color
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 
