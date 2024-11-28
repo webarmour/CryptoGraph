@@ -28,6 +28,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.koin.androidx.compose.koinViewModel
+import ru.webarmour.cryptograph.crypto.core.navigation.AdaptiveCoinListDetailPane
 import ru.webarmour.cryptograph.crypto.core.presentation.util.ObserveAsEvents
 import ru.webarmour.cryptograph.crypto.core.presentation.util.toStringError
 import ru.webarmour.cryptograph.crypto.presentation.coin_detail.CoinDetailScreen
@@ -45,102 +46,13 @@ class MainActivity : ComponentActivity() {
 
             CryptoGraphTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    val viewModel = koinViewModel<CoinListViewModel>()
-                    val state by viewModel.state.collectAsStateWithLifecycle()
-                    val context = LocalContext.current
-                    ObserveAsEvents(events = viewModel.events) { event ->
-                        when (event) {
-                            is CoinListEvent.Error -> {
-                                Toast.makeText(
-                                    context,
-                                    event.message.toStringError(context),
-                                    Toast.LENGTH_LONG
-                                ).show()
-                            }
-                        }
-                    }
-                    when {
-                        state.selectedCoin != null -> {
-                            CoinDetailScreen(
-                                state = state,
-                                modifier = Modifier.padding(innerPadding)
-                            )
-                        }
-
-                        else -> {
-                            CoinListScreen(
-                                state = state,
-                                modifier = Modifier.padding(innerPadding),
-                                onAction = viewModel::onAction
-                            )
-                        }
-                    }
-
+                    AdaptiveCoinListDetailPane(
+                        modifier = Modifier.padding(innerPadding)
+                    )
                 }
             }
         }
     }
-}
-
-
-@Composable
-fun MyFlowRow(
-    modifier: Modifier = Modifier,
-    content: @Composable () -> Unit,
-) {
-    val scrollState = rememberScrollState()
-    Layout(
-        modifier = modifier
-            .verticalScroll(scrollState),
-        content = content,
-        measurePolicy = { measurables, constraints ->
-            val placeables = measurables.map {
-                it.measure(constraints)
-            }
-            val groupedPlaceables = mutableListOf<List<Placeable>>()
-            var currentGroup = mutableListOf<Placeable>()
-            var currentGroupWidth = 0
-
-            placeables.forEach { placeable ->
-                if (currentGroupWidth + placeable.width <= constraints.maxWidth) {
-                    currentGroup.add(placeable)
-                    currentGroupWidth += placeable.width
-                } else {
-                    groupedPlaceables.add(currentGroup)
-                    currentGroup = mutableListOf(placeable)
-                    currentGroupWidth = placeable.width
-                }
-            }
-
-            if (currentGroup.isNotEmpty()) {
-                groupedPlaceables.add(currentGroup)
-            }
-            val totalHeight = groupedPlaceables.sumOf { row ->
-                row.maxOfOrNull { it.height } ?: 0
-            }
-
-            val constrainedHeight = totalHeight.coerceAtMost(Int.MAX_VALUE)
-
-            layout(
-                width = constraints.maxWidth,
-                height = constrainedHeight
-            ) {
-                var yPosition = 0
-                groupedPlaceables.forEach { row ->
-                    var xPosition = 0
-                    row.forEach { placeable ->
-                        placeable.place(
-                            x = xPosition,
-                            y = yPosition,
-                        )
-                        xPosition += placeable.width
-                    }
-                    yPosition += row.maxOfOrNull { it.height } ?: 0
-                }
-
-            }
-        }
-    )
 }
 
 
