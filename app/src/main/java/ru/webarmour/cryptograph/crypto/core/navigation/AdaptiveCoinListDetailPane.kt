@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalMaterial3AdaptiveApi::class)
+
 package ru.webarmour.cryptograph.crypto.core.navigation
 
 import android.widget.Toast
@@ -22,7 +24,6 @@ import ru.webarmour.cryptograph.crypto.presentation.coin_list.CoinListScreen
 import ru.webarmour.cryptograph.crypto.presentation.coin_list.CoinListViewModel
 
 
-@OptIn(ExperimentalMaterial3AdaptiveApi::class)
 @Composable
 fun AdaptiveCoinListDetailPane(
     modifier: Modifier = Modifier,
